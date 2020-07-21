@@ -1,4 +1,4 @@
-﻿#This script will move ARM Backups older than 30 days to a designated folder, then delete
+﻿#This script will move items older than 30 days to a designated folder, then delete
 #those items once they reach 60 days old.
 
 
