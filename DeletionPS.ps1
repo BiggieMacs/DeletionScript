@@ -28,7 +28,7 @@ get-childitem -Path $Source |
 }
    
 
-#Deletes items Older than 45 days
+#Deletes items Older than 60 days
 Get-ChildItem $Delete -Recurse -Force -ea 0 |
     Where-Object {!$_.PsIsContainer -and $_.CreationTime -lt (Get-Date).AddDays(-60)} |
     ForEach-Object {
