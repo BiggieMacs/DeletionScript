@@ -20,7 +20,7 @@ $Delete = "\\same\location\as\target"
 $LogsDelete = "\\Location\for\LOGS\DeletionLog.csv"
 $LogsMove = "\\Location\for\LOGS\MoveLog.csv"
 
-#Moves ARM's older than 30 days to Pending Deletion Folder
+#Moves items older than 30 days to Pending Deletion Folder
 get-childitem -Path $Source |
     Where-Object {$_.CreationTime -lt (get-date).AddDays(-30)} |
     ForEach-Object {
@@ -28,7 +28,7 @@ get-childitem -Path $Source |
 }
    
 
-#Deletes ARM's Older than 45 days
+#Deletes items Older than 45 days
 Get-ChildItem $Delete -Recurse -Force -ea 0 |
     Where-Object {!$_.PsIsContainer -and $_.CreationTime -lt (Get-Date).AddDays(-60)} |
     ForEach-Object {
